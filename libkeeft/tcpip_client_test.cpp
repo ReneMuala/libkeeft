@@ -8,7 +8,7 @@
 #include <iostream>
 #include "tcpip/socket.hpp"
 
-#include <sys/select.h>
+// #include <sys/select.h>
 
 int main(int argc, const char * argv[]) {
     
@@ -21,10 +21,10 @@ int main(int argc, const char * argv[]) {
     char Message[500];
     
     client.read(Message, 500);
+        
+    std::cout << "Server says: " << Message << std::endl;
     
     strcpy(Message,"Hello server");
-    
-    std::cout << "Server says: " << Message << std::endl;
     
     client.write(Message, strlen(Message));
                 
