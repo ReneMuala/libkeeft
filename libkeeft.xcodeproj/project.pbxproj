@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1768147426A8614300360400 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768147326A8614300360400 /* main.cpp */; };
+		1768147E26A8663000360400 /* socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768147C26A8663000360400 /* socket.cpp */; };
+		1768148126A8789700360400 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768148026A8789700360400 /* client.cpp */; };
+		1768148426A8846500360400 /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768148326A8846500360400 /* server.cpp */; };
+		1768149F26A8A47E00360400 /* tcpip_client_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768148826A88D1700360400 /* tcpip_client_test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +27,12 @@
 
 /* Begin PBXFileReference section */
 		1768147026A8614300360400 /* libkeeft */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = libkeeft; sourceTree = BUILT_PRODUCTS_DIR; };
-		1768147326A8614300360400 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1768147326A8614300360400 /* tcpip_server_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tcpip_server_test.cpp; sourceTree = "<group>"; };
+		1768147C26A8663000360400 /* socket.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = socket.cpp; sourceTree = "<group>"; };
+		1768147D26A8663000360400 /* socket.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = socket.hpp; sourceTree = "<group>"; };
+		1768148026A8789700360400 /* client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = client.cpp; sourceTree = "<group>"; };
+		1768148326A8846500360400 /* server.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = server.cpp; sourceTree = "<group>"; };
+		1768148826A88D1700360400 /* tcpip_client_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tcpip_client_test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +65,22 @@
 		1768147226A8614300360400 /* libkeeft */ = {
 			isa = PBXGroup;
 			children = (
-				1768147326A8614300360400 /* main.cpp */,
+				1768147B26A865FF00360400 /* tcpip */,
+				1768147326A8614300360400 /* tcpip_server_test.cpp */,
+				1768148826A88D1700360400 /* tcpip_client_test.cpp */,
 			);
 			path = libkeeft;
+			sourceTree = "<group>";
+		};
+		1768147B26A865FF00360400 /* tcpip */ = {
+			isa = PBXGroup;
+			children = (
+				1768148026A8789700360400 /* client.cpp */,
+				1768148326A8846500360400 /* server.cpp */,
+				1768147C26A8663000360400 /* socket.cpp */,
+				1768147D26A8663000360400 /* socket.hpp */,
+			);
+			path = tcpip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +139,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1768147426A8614300360400 /* main.cpp in Sources */,
+				1768147E26A8663000360400 /* socket.cpp in Sources */,
+				1768148426A8846500360400 /* server.cpp in Sources */,
+				1768148126A8789700360400 /* client.cpp in Sources */,
+				1768149F26A8A47E00360400 /* tcpip_client_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
