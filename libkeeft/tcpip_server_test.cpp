@@ -12,9 +12,11 @@ int main(int argc, const char * argv[]) {
     
     ServerSocket server = ServerSocket(0, AF_INET, 40001, INADDR_ANY, NULL);
     
-    //server.reuse();
+    server.reuse(ServerSocket::Reusable::Address);
     
     server.bind();
+    
+    std::cout << "Waiting for connections..." << std::endl;
     
     while(1) {
         

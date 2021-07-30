@@ -16,6 +16,7 @@
 #include <netdb.h> // hostent
 #include <netinet/in.h> // protocols
 #include <sys/types.h> // types
+#include <unistd.h> // close
 
 #define LIBKEEFT_TCPIP_VERSION "libkeeft/tcpip 0.1"
 
@@ -39,8 +40,10 @@ public:
     
     virtual Socket& read(void * to, size_t max_size);
     
-    ~Socket();
+    static void close(int);
     
+    Socket& close();
+
 };
 
 class ClientSocket: public Socket {
@@ -60,6 +63,11 @@ class ServerSocket: public Socket {
     int f_reuse_data;
 public:
     
+    typedef enum {
+        Address = SO_REUSEADDR,
+        Port    = SO_REUSEPORT,
+    } Reusable;
+    
     ServerSocket();
 
     ServerSocket(uint8_t lenght, sa_family_t family, int port, in_addr_t addr, char *zero);
@@ -67,15 +75,17 @@ public:
     ServerSocket& configure_stream(uint8_t lenght, sa_family_t family, int port, in_addr_t addr, char zero[8]) override;
     
     /**
-     @brief Forces the  API to reuse the address and port, must to be called after configure_stream(...)  and before bind()
+     @brief Forces the  API to reuse address or port, must to be called after configure_stream(...)  and before bind()
      */
-    ServerSocket& reuse();
+    ServerSocket& reuse(const int);
     
     ServerSocket& bind();
     
     ServerSocket& listen(int = 5);
     
     ServerSocket& accept();
+    
+    ServerSocket& export_accepted(int&);
 };
 
 #endif /* socket_hpp */

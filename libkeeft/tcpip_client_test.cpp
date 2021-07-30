@@ -12,7 +12,11 @@
 
 int main(int argc, const char * argv[]) {
     
-    ClientSocket client = ClientSocket(0, AF_INET, 40001, INADDR_ANY, NULL);
+    
+    ClientSocket client(/*uint8_t lenght: geralmente (0)*/ 0, /*sa_family_t family: A familia do entendereço: IPv4 */ AF_INET, /*int port: Porta*/ 40001, /*in_addr_t addr: Indereço: Qualquer*/ INADDR_ANY , /*char *zero*: Um buffer usado pelo socket: NULL*/NULL);
+    
+    // Ou
+    // ClientSocket client = ClientSocket(0, AF_INET, 40001, INADDR_ANY, NULL);
     
     client.connect("localhost");
     

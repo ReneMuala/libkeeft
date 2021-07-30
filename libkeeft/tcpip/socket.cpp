@@ -43,5 +43,11 @@ Socket& Socket::read(void *data, size_t size){
     return (*this);
 }
 
-Socket::~Socket(){
+void Socket::close(int sockfd){
+    ::close(sockfd);
+}
+
+Socket& Socket::close() {
+    ::close(sock);
+    return (*this);
 }

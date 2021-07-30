@@ -30,10 +30,10 @@ ServerSocket& ServerSocket::configure_stream(uint8_t lenght, sa_family_t family,
     return (*this);
 }
 
-ServerSocket& ServerSocket::reuse(){
+ServerSocket& ServerSocket::reuse(const int data){
     f_reuse_data = 1;
     //ENOTSOCK
-    if(setsockopt(main_sock, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &f_reuse_data, sizeof(f_reuse_data))<0)
+    if(setsockopt(main_sock, SOL_SOCKET, data, &f_reuse_data, sizeof(f_reuse_data))<0)
         printf("%s", (std::string(LIBKEEFT_TCPIP_VERSION)+": Unable to reuse adrr and port. errno:" + std::to_string(errno)).c_str());
     return (*this);
 }
@@ -58,5 +58,9 @@ ServerSocket& ServerSocket::accept(){
     return (*this);
 }
 
-
-
+ServerSocket& ServerSocket::export_accepted(int & sockfd){
+    
+    sockfd = sock;
+    
+    return (*this);
+}

@@ -10,7 +10,7 @@
 		1768147E26A8663000360400 /* socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768147C26A8663000360400 /* socket.cpp */; };
 		1768148126A8789700360400 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768148026A8789700360400 /* client.cpp */; };
 		1768148426A8846500360400 /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768148326A8846500360400 /* server.cpp */; };
-		1768149F26A8A47E00360400 /* tcpip_client_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768148826A88D1700360400 /* tcpip_client_test.cpp */; };
+		17D997C026B31E1200219F36 /* tcpip_client_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1768148826A88D1700360400 /* tcpip_client_test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +33,7 @@
 		1768148026A8789700360400 /* client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = client.cpp; sourceTree = "<group>"; };
 		1768148326A8846500360400 /* server.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = server.cpp; sourceTree = "<group>"; };
 		1768148826A88D1700360400 /* tcpip_client_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tcpip_client_test.cpp; sourceTree = "<group>"; };
+		176814A126A8BFB600360400 /* tcpip_server_using_select_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tcpip_server_using_select_test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 			children = (
 				1768147B26A865FF00360400 /* tcpip */,
 				1768147326A8614300360400 /* tcpip_server_test.cpp */,
+				176814A126A8BFB600360400 /* tcpip_server_using_select_test.cpp */,
 				1768148826A88D1700360400 /* tcpip_client_test.cpp */,
 			);
 			path = libkeeft;
@@ -142,7 +144,7 @@
 				1768147E26A8663000360400 /* socket.cpp in Sources */,
 				1768148426A8846500360400 /* server.cpp in Sources */,
 				1768148126A8789700360400 /* client.cpp in Sources */,
-				1768149F26A8A47E00360400 /* tcpip_client_test.cpp in Sources */,
+				17D997C026B31E1200219F36 /* tcpip_client_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
